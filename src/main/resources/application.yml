@@ -1,0 +1,26 @@
+server:
+  port: 8080
+
+spring:
+  datasource:
+    url: jdbc:postgresql://localhost:5436/postgres
+    username: postgres
+    password: admin
+    hikari:
+      driver-class-name: 'org.postgresql.Driver'
+      idle-timeout: 6000
+      maximum-pool-size: 5
+      connection-timeout: 250
+      max-lifetime: 1
+  jpa:
+    database-platform: org.hibernate.dialect.PostgreSQLDialect
+  flyway:
+    url: jdbc:postgresql://localhost:5436/postgres
+    schemas: public
+    user: postgres
+    password: admin
+
+time-generate:
+  enable: true
+
+db-reconnect-interval: 5000
